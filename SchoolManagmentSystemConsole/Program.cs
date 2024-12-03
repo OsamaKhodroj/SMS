@@ -1,6 +1,5 @@
 ﻿using Skynet.ERP.Domains;
 using Skynet.ERP.Services;
-using System.Linq;
 namespace Skynet.ERP.SchoolManagmentSystemConsole
 {
     internal class Program
@@ -29,20 +28,43 @@ namespace Skynet.ERP.SchoolManagmentSystemConsole
                 EmailAddress = "ahmad@osama.com",
                 Password = "1111111"
             });
-  
-            //foreach (var item in order_1)
-            //{
-            //    Console.WriteLine($"Student Id: {item.Id}");
-            //    Console.WriteLine($"Student Name: {item.Name}");
-            //    Console.WriteLine($"Student Address: {item.Address}");
-            //    Console.WriteLine($"Student Phone Number: {item.PhoneNumber}");
-            //    Console.WriteLine($"Student Created Date: {item.CreatedDateTime}");
-            //    Console.WriteLine($"Student Email Address: {item.EmailAddress}");
-            //    Console.WriteLine($"Student Password: {item.Password}");
-            //    Console.WriteLine($"***********************************************");
-            //}
 
-            #endregion 
+            stuService.Insert(new Student()
+            {
+                Id = 3,
+                Name = "Ahmad",
+                Address = "Zarqa",
+                PhoneNumber = "9876354321",
+                EmailAddress = "ahmad@osama.com",
+                Password = "1111111"
+            });
+
+            stuService.Insert(new Student()
+            {
+                Id = 4,
+                Name = "Ahmad",
+                Address = "Zarqa",
+                PhoneNumber = "9876354321",
+                EmailAddress = "ahmad@osama.com",
+                Password = "1111111"
+            });
+
+            var list = stuService.GetAll();
+
+
+            foreach (var item in list)
+            {
+                Console.WriteLine($"Student Id: {item.Id}");
+                Console.WriteLine($"Student Name: {item.Name}");
+                Console.WriteLine($"Student Address: {item.Address}");
+                Console.WriteLine($"Student Phone Number: {item.PhoneNumber}");
+                Console.WriteLine($"Student Created Date: {item.CreatedDateTime}");
+                Console.WriteLine($"Student Email Address: {item.EmailAddress}");
+                Console.WriteLine($"Student Password: {item.Password}");
+                Console.WriteLine($"***********************************************");
+            }
+
+            #endregion
         }
     }
 }
