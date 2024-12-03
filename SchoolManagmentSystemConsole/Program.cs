@@ -42,9 +42,7 @@ namespace Skynet.ERP.SchoolManagmentSystemConsole
             //    Console.WriteLine($"***********************************************");
             //}
 
-            #endregion
-
-            //Osama
+            #endregion 
         }
     }
 }
